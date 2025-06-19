@@ -1,0 +1,21 @@
+#variable challenge
+START
+
+SET name TO INPUT("Tahlia")
+SET age TO INPUT("14")
+
+DISPLAY "Welcome", name
+DISPLAY "You are", age, "years old"
+
+END
+
+
+#Data types challenge
+SET name TO "Tahlia" ← string
+SET score TO 10   ← integer
+SET is_logged_in TO true   ← Boolean
+SET height TO 1.5   ← float
+SET colours TO ["purple", "pink", "white"]  ← list
+
+
+#prac 

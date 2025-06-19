@@ -1,0 +1,64 @@
+#prac 2.0
+START
+SET options to ["rock", :"paper", "scissors"]
+DISPLAY "Choose Rock, Paper, or Scissors:"
+INPUT choice fromn options
+SET player_choice TO whatever they INPUT
+SET computer_choice TO random from options
+IF player_choice = computer_choice THEN
+    DISPLAY "its a tie"
+ELSE IF __players_choice = scissors and computer_choice = paper THEN
+    DISPLAY "You Win"
+
+ ELSE IF __players_choice = scissors and computer_choice = rock THEN
+    DISPLAY "You lose"
+
+ELSE IF __players_choice = rock and computer_choice = paper THEN
+    DISPLAY "You lose"
+
+ELSE IF __players_choice = rock and computer_choice = scissors THEN
+    DISPLAY "You Win"
+
+ELSE IF __players_choice = paper and computer_choice = rock THEN
+    DISPLAY "You Win"
+
+ELSE IF __players_choice = paper and computer_choice = scissors THEN
+    DISPLAY "You lose"
+
+ELSE 
+    DISPLAY "Choose again"
+END
+
+
+#prac 2.1
+START
+
+DISPLAY "Enter login"
+
+INPUT username
+
+IF username is known THEN
+    DISPLAY "Enter Passowrd"
+
+IF password = true THEN
+    DISPLAY "Login successful"
+
+ELSE
+    DISPLAY "Login uncessuccessful. Try again"
+
+END
+
+
+#prac 3.0
+START
+
+SET name TO Tahlia
+SET age TO 14
+
+DISPLAY "Hello", name
+DISPLAY "You are", age, "years old"
+
+END
+
+
+
