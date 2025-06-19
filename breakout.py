@@ -21,4 +21,4 @@ while True:
     if num > 10:
         break
     print("didn't break")
-print("finally brokie out the loop")
+print("finally broke out the loop")
