@@ -3,7 +3,7 @@ name = str(input("What is your childs name?"))
 age = int(input("What is their age?"))
 snack = str(input("What snack do they want to bring?"))
 game_time = float(input("how long should they be in the game? Answer in minutes "))
-water_play = bool(input("Do they like water play? Answer yes/no "))
+water_play = input("Do they like water play? Answer yes/no ").lower() == "yes"
 print(f"Hi {name}! You're {age} years old and are ready to play in Bluey's backyard. You'll play for {game_time} minutes and bring your snack: {snack}. Water play? {water_play}!")
 
 #Exercise 2
