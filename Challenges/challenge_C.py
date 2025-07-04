@@ -1,6 +1,6 @@
-action = input(str("What did they do?"))
-post = input("Did they like your lates post? ").lower()== "yes"
-real_life = input("Are they your real like friend? ").lower == "yes"
+action = input(str("What did they do? apologised/praised/ignored/insulted? "))
+post = input("Did they like your latest post? ").lower()== "yes"
+real_life = input("Are they your real life friend? ").lower == "yes"
 
 if action in ["apologised", "praised"]:
     if post == True:
