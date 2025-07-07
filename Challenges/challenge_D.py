@@ -91,10 +91,13 @@ while enemy_choice not in enemies:
         print("Try again.")
 
 print(f"Your health is: {player_health}")
+ 
 print(f"Your enemies health is: {enemy_health}")
 while enemy_health > 0 and player_health > 0:
     print("It's your turn to fight your enemy.")
     enemy_health = enemy_health - damage
+    if enemy_health < 0:
+        enemy_health = 0
     print(f"Enemy health is now {enemy_health}")
 
     print(f"{enemy_choice}'s turn.")
@@ -103,7 +106,10 @@ while enemy_health > 0 and player_health > 0:
 
     if enemy_health <= 0 and player_health >0:
         print("You have won the battle!")
-        break
-    else:
+        
+    elif enemy_health <= 0 and player_health <= 0:
+        print("Yout tied!")
+    
+    elif enemy_health >0 and player_health <= 0:
         print("You lost :(")
-        break
+        
