@@ -20,3 +20,5 @@ def colourText(text, colour):
 
 colourText("this is red", Fore.RED)
 colourText('THis is green', Back.GREEN)
+colourText("", Back.RESET)
+colourText("I dont want this to be colorama", Fore.RESET)
