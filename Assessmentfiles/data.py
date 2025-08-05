@@ -9,7 +9,7 @@ intro = {
 
 start=  {
         'success': "SOME QUICK TIPS:",
-        'basic': '- All answers are case sensitive so make sure you copy comands exactly!\n - Type commands to view all your options\n' 
+        'basic': '- All answers are case sensitive so make sure you copy comands exactly!\n- Type commands to view all your options\n' 
     }
 print(start['basic'])
 
