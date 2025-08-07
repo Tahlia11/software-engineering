@@ -9,8 +9,8 @@ def clearscreen ():
 
 
 def endscene ():
-    scenechange = input('Hit "enter" to continue: ')
-    os.system('cls')
+    input('Hit "enter" to continue: ')
+    clearscreen()
 
 
 
