@@ -15,13 +15,27 @@ print(endscene())
 
 #First room - Office
 print(Fore.RED, intro['breakspace'])
-print(Fore.YELLOW, office['name'])
+print(Fore.YELLOW, offname)
 print(Fore.RED, intro['breakspace'])
-print(Fore.WHITE, office['description'])
+print(Fore.WHITE, offdes)
 print(Fore.LIGHTMAGENTA_EX, "<<Your new case>>")
-print(Fore.WHITE, office['first'])
+print(Fore.WHITE, offfirst)
 print(room())
-
+print(Fore.CYAN, idduno())
 if idduno() == "help me":
     clearscreen()
     print(helpme())
+    print(endscene())
+elif idduno() == "commands":
+    clearscreen()
+    print(commandss())
+    print(endscene())
+elif idduno() == "map":
+    clearscreen()
+    print(mapp())
+    print(endscene())
+elif idduno() == "mail":
+    clearscreen()
+else:
+    print(Fore.WHITE, "Try again")
+    print(Fore.CYAN, idduno())
