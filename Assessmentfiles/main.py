@@ -1,6 +1,5 @@
 from data import *
 from functions import *
-
 #Welcome + game description
 print(Fore.RED, intro['breakspace'], Fore.YELLOW)
 animate(f"{intro['welcome']}")
@@ -21,21 +20,30 @@ print(Fore.WHITE, offdes)
 print(Fore.LIGHTMAGENTA_EX, "<<Your new case>>")
 print(Fore.WHITE, offfirst)
 print(room())
-print(Fore.CYAN, idduno())
-if idduno() == "help me":
-    clearscreen()
+inter = input(str("What would you like to do? / Where would you like to go?"))
+
+while inter == "help me":
+    print(clearscreen ())
     print(helpme())
     print(endscene())
-elif idduno() == "commands":
-    clearscreen()
-    print(commandss())
+    break
+while inter == "commands":
+    print(clearscreen ())
+    print(commandsss())
     print(endscene())
-elif idduno() == "map":
-    clearscreen()
+    break
+while inter == "map":
+    print(clearscreen ())
     print(mapp())
     print(endscene())
-elif idduno() == "mail":
-    clearscreen()
+    break
+while inter == "mail":
+    print(clearscreen())
+    print(letters())
+    print(endscene())
+while inter == "puzzle":
+    print(clearscreen())
+    print(puzzle1())
+    print(endscene())
 else:
     print(Fore.WHITE, "Try again")
-    print(Fore.CYAN, idduno())

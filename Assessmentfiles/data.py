@@ -1,7 +1,6 @@
 health = 100
 progress = 0
 
-
 intro = {
         'breakspace': '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~',
         'welcome': '          Unsolved: The Correspondance',
@@ -20,7 +19,7 @@ inventory = {
 }
 
 mail = {
-    'first': "Hello Detective, \n Its been a long time. I'm sure you remember me, just as I remember you. I spent a long time locked up because of you, my reputation is ruined. Now I'm back, I'll go back to doing what I love. And you'll go back to chasing me. Find your first clue at the place where holy water meets skin, the sun shines in colour and you can finally find your people."
+    'your first letter': "Hello Detective, \n Its been a long time. I'm sure you remember me, just as I remember you. I spent a long time locked up because of you, my reputation is ruined. Now I'm back, I'll go back to doing what I love. And you'll go back to chasing me. Find your first clue at the place where  water meets te forehead, the sun shines in colour and you can finally find your people."
 }
 
 puzzle = {
@@ -35,7 +34,7 @@ commands = {
 
 #options
 help = {
-    'heading':'              Help me!!'.capitalize,
+    'heading':'              Help me!!',
     'ahead': '<<Your aim>>',
     'your aim': 'Travel throught the rooms, solving the clues and puzzles, and stop the killer from harming his next victim',
     'chead': '<<Commands>>',
@@ -48,7 +47,7 @@ help = {
 }
 
 commandss = {
-    'heading': '              Commands'.capitalize,
+    'heading': '              Commands',
     'thead': '<<Travel Commands>>',
     'travel': '    - To travel to a place, type in the name of the place (e.g. "the beach"). \n    This is case sensitve make sure its the same.',
     'ghead': '<<Game Commands>>',
@@ -60,7 +59,7 @@ commandss = {
 }
 
 map = {
-    'heading': '              The Correspondance Map'.capitalize,
+    'heading': '              The Correspondance Map',
     'office' : {
         'name': 'The Precinct',
         'description': 'Buzzing with men in uniform, the precinct is the home of all detectives & police, their watching you.',
@@ -107,3 +106,10 @@ alna = map['alley']['name']
 aldes = map['alley']['description']
 alex = map['alley']['exits']
 alex = map['alley']['exits1']
+
+#puzzles
+puzzle2 = {
+    'opening': 'The killers back, he has sent you a letter, the letter reads: ',
+    'where': 'You have been left a clue, where is the killer trying to direct you to?',
+    'locations':'   1. the beach \n   2. the church'
+}

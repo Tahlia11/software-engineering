@@ -5,9 +5,10 @@ import os
 import time 
 from data import *
 
+
+
 def idduno ():
     str(input("What would you like to do? / Where would you like to go?"))
-
 
 
 def clearscreen ():
@@ -41,14 +42,15 @@ def room ():
     print()
     print(Fore.LIGHTMAGENTA_EX, commands['head'])
     print(Fore.WHITE, commands['all'])
+ 
 
 
 def helpme ():
-    print(Fore.RED, intro['breakspace'])
-    print(Fore.YELLOW, help['heading'])
+    print(Fore.RED, intro['breakspace'], Fore.YELLOW)
+    animate(f"{help['heading']}")
     print(Fore.RED, intro['breakspace'])
     print(Fore.LIGHTMAGENTA_EX, help['ahead'])
-    print(Fore.WHITE, help['aim'])
+    print(Fore.WHITE, help['your aim'])
     print()
     print(Fore.LIGHTMAGENTA_EX, help['chead'])
     print(Fore.WHITE, help['commands'])
@@ -61,9 +63,9 @@ def helpme ():
     print()
     print(help['fail'])
 
-def commandss():
-    print(Fore.RED, intro['breakspace'])
-    print(Fore.YELLOW, commandss['heading'])
+def commandsss():
+    print(Fore.RED, intro['breakspace'],Fore.YELLOW)
+    animate(f"{commandss['heading']}")
     print(Fore.RED, intro['breakspace'])
     print(Fore.LIGHTMAGENTA_EX, commandss['thead'])
     print(Fore.WHITE, commandss['travel'])
@@ -78,8 +80,8 @@ def commandss():
     print(Fore.WHITE, commandss['battle'])
 
 def mapp():
-    print(Fore.RED, intro['breakspace'])
-    print(Fore.YELLOW, map['heading'])
+    print(Fore.RED, intro['breakspace'],Fore.YELLOW)
+    animate(f"{map['heading']}")
     print(Fore.RED, intro['breakspace'])
     print(Fore.LIGHTMAGENTA_EX, offname)
     print(Fore.WHITE, offdes)
@@ -93,3 +95,20 @@ def mapp():
     print(Fore.LIGHTMAGENTA_EX, alna)
     print(Fore.WHITE, aldes)
 
+def letters():
+    print(Fore.RED, intro['breakspace'], Fore.YELLOW)
+    animate('              Your mail')
+    print(Fore.RED, intro['breakspace'])
+    for key, value in mail.items():
+        print(Fore.WHITE, value)
+
+def puzzle1():
+    print(Fore.RED, intro['breakspace'], Fore.YELLOW)
+    animate('              Puzzle Room')
+    print(Fore.RED, intro['breakspace'])
+    print()
+    print(Fore.WHITE, mail['your first letter'])
+    print()
+    print(puzzle2['where'])
+    print()
+    print(puzzle2['locations'])

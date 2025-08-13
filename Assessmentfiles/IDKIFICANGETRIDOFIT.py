@@ -32,3 +32,8 @@ elif choice == "mail":
 else:
     print(Fore.WHITE, "Try again")
     print(Fore.CYAN, idduno())
+
+
+print(helpme())
+print(endscene())
+
