@@ -1,5 +1,6 @@
 health = 100
-progress = 0
+if health > 100:
+    health = 100
 
 intro = {
         'breakspace': '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~',
@@ -111,5 +112,5 @@ alex = map['alley']['exits1']
 puzzle2 = {
     'opening': 'The killers back, he has sent you a letter, the letter reads: ',
     'where': 'You have been left a clue, where is the killer trying to direct you to?',
-    'locations':'   1. the beach \n   2. the church'
+    'locations':'   1. the beach \n   2. the church \n   3. the back alley'
 }

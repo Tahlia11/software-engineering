@@ -1,5 +1,7 @@
 from data import *
 from functions import *
+
+clearscreen()
 #Welcome + game description
 print(Fore.RED, intro['breakspace'], Fore.YELLOW)
 animate(f"{intro['welcome']}")
@@ -11,39 +13,30 @@ print(endscene())
 print(Fore.GREEN, start['success'])
 print(Fore.WHITE, start['basic'], Fore.CYAN)
 print(endscene())
-
+while True:
 #First room - Office
-print(Fore.RED, intro['breakspace'])
-print(Fore.YELLOW, offname)
-print(Fore.RED, intro['breakspace'])
-print(Fore.WHITE, offdes)
-print(Fore.LIGHTMAGENTA_EX, "<<Your new case>>")
-print(Fore.WHITE, offfirst)
-print(room())
-inter = input(str("What would you like to do? / Where would you like to go?"))
-
-while inter == "help me":
-    print(clearscreen ())
-    print(helpme())
-    print(endscene())
-    break
-while inter == "commands":
-    print(clearscreen ())
-    print(commandsss())
-    print(endscene())
-    break
-while inter == "map":
-    print(clearscreen ())
-    print(mapp())
-    print(endscene())
-    break
-while inter == "mail":
-    print(clearscreen())
-    print(letters())
-    print(endscene())
-while inter == "puzzle":
-    print(clearscreen())
-    print(puzzle1())
-    print(endscene())
-else:
-    print(Fore.WHITE, "Try again")
+    office1()
+    print('')
+    print(Fore.LIGHTMAGENTA_EX, puzzle['message'])
+    print(Fore.CYAN, puzzle['command'], Fore.WHITE)
+    inter = input(str("What would you like to do? / Where would you like to go?"))
+    if inter == "help me":
+        print(clearscreen())
+        print(helpme())
+        print(endscene())
+    elif inter == "commands":
+        print(clearscreen())
+        print(commandsss())
+    elif inter == "map":
+        print(clearscreen())
+        print(mapp())
+    elif inter == "mail":
+        print(clearscreen())
+        print(letters())
+    elif inter == "puzzle":
+        print(clearscreen())
+        print(puzzle1())
+    elif inter == "the beach":
+        print(clearscreen())
+    else:
+        print(Fore.WHITE, "Try again")

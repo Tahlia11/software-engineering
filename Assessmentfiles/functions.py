@@ -22,28 +22,30 @@ def animate (text):
     for letter in text:
         print(letter, end='', flush=True)
         time.sleep(0.1)
-    print()
+    print('')
 
 
 #Every room
 def room ():
     print(Fore.LIGHTMAGENTA_EX, inventory['message'])
     print(Fore.WHITE, inventory['items'])
-    print()
+    print('')
     print(f"Your current health is {health}")
-    print()
-    print(f"Your current progress is {progress}")
-    print()
-    print(Fore.LIGHTMAGENTA_EX, puzzle['message'])
-    print(Fore.CYAN, puzzle['command'])
-    print()
+    print('')
     print(Fore.LIGHTMAGENTA_EX, offex)
     print(Fore.WHITE, offex1)
-    print()
+    print('')
     print(Fore.LIGHTMAGENTA_EX, commands['head'])
     print(Fore.WHITE, commands['all'])
  
-
+def office1():
+    print(Fore.RED, intro['breakspace'])
+    print(Fore.YELLOW, offname)
+    print(Fore.RED, intro['breakspace'])
+    print(Fore.WHITE, offdes)
+    print(Fore.LIGHTMAGENTA_EX, "<<Your new case>>")
+    print(Fore.WHITE, offfirst)
+    print(room())
 
 def helpme ():
     print(Fore.RED, intro['breakspace'], Fore.YELLOW)
@@ -51,16 +53,16 @@ def helpme ():
     print(Fore.RED, intro['breakspace'])
     print(Fore.LIGHTMAGENTA_EX, help['ahead'])
     print(Fore.WHITE, help['your aim'])
-    print()
+    print('')
     print(Fore.LIGHTMAGENTA_EX, help['chead'])
     print(Fore.WHITE, help['commands'])
-    print()
+    print('')
     print(Fore.LIGHTMAGENTA_EX, help['lhead'])
     print(Fore.WHITE, help['locations'])
-    print()
+    print('')
     print(Fore.LIGHTMAGENTA_EX, help['thead'])
     print(Fore.WHITE, help['tips'])
-    print()
+    print('')
     print(help['fail'])
 
 def commandsss():
@@ -69,13 +71,13 @@ def commandsss():
     print(Fore.RED, intro['breakspace'])
     print(Fore.LIGHTMAGENTA_EX, commandss['thead'])
     print(Fore.WHITE, commandss['travel'])
-    print()
+    print('')
     print(Fore.LIGHTMAGENTA_EX, commandss['ghead'])
     print(Fore.WHITE, commandss['game'])
-    print()
+    print('')
     print(Fore.LIGHTMAGENTA_EX, commandss['phead'])
     print(Fore.WHITE, commandss['puzzle'])
-    print()
+    print('')
     print(Fore.LIGHTMAGENTA_EX, commandss['bhead'])
     print(Fore.WHITE, commandss['battle'])
 
@@ -85,13 +87,13 @@ def mapp():
     print(Fore.RED, intro['breakspace'])
     print(Fore.LIGHTMAGENTA_EX, offname)
     print(Fore.WHITE, offdes)
-    print()
+    print('')
     print(Fore.LIGHTMAGENTA_EX, bena)
     print(Fore.WHITE, bedes)
-    print()
+    print('')
     print(Fore.LIGHTMAGENTA_EX, chna)
     print(Fore.WHITE, chdes)
-    print()
+    print('')
     print(Fore.LIGHTMAGENTA_EX, alna)
     print(Fore.WHITE, aldes)
 
@@ -106,9 +108,30 @@ def puzzle1():
     print(Fore.RED, intro['breakspace'], Fore.YELLOW)
     animate('              Puzzle Room')
     print(Fore.RED, intro['breakspace'])
-    print()
+    print('')
     print(Fore.WHITE, mail['your first letter'])
-    print()
+    print('')
     print(puzzle2['where'])
-    print()
+    print('')
     print(puzzle2['locations'])
+    answer_1 = input("Please enter the number of you answer: ")
+    if answer_1 == '1':
+        clearscreen()
+        print(Fore.RED, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n") 
+        print(Fore.WHITE, 'Now that you know what it is not, re-attempt the question and find the next clue.')
+        health = health - 5
+        print(endscene())
+    elif answer_1 == '2':
+        print(clearscreen())
+        print(Fore.LIGHTGREEN_EX, 'Correct! +5 progress \n')
+        print(Fore.WHITE, 'The killer is leading you to the church! We have to get there quickly to find the next clue.')
+        health = health + 5
+        print(endscene())
+    elif answer_1 == '3':
+        print(Fore.RED, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n") 
+        print(Fore.WHITE, 'Now that you know what it is not, re-attempt the question and find the next clue.')
+        health = health - 5
+        print(endscene())
+    else:
+        print("Try again")
+        answer_1 = input("Please enter the number of you answer: ")
