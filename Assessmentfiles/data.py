@@ -16,11 +16,11 @@ start=  {
 #menu
 inventory = {
     'message':'<<Your Current Inventory>>',
-    'items':''
+    'items':[]
 }
 
 mail = {
-    'your first letter': "Hello Detective, \n Its been a long time. I'm sure you remember me, just as I remember you. I spent a long time locked up because of you, my reputation is ruined. Now I'm back, I'll go back to doing what I love. And you'll go back to chasing me. Find your first clue at the place where  water meets te forehead, the sun shines in colour and you can finally find your people."
+    
 }
 
 puzzle = {
@@ -72,19 +72,19 @@ map = {
         'name': 'The Beach',
         'description': '',
         'exits': '<<Available exits>>',
-        'exits1': ''
+        'exits1': ' > the church \n > the precinct \n > the back alley'
     },
     'church': {
         'name': 'The Church',
-        'description': '',
+        'description': 'As you enter the church, you instantly get the feeling that something is wrong. Your suspitions are confirmed when you look at the altar and instead of candles or a cross, you find an engraved knife and a letter addresses to you. Your only question, who is BOBBI?',
         'exits': '<<Available exits>>',
-        'exits1': ''
+        'exits1': ' > the precinct \n > the beach \n > the back alley'
     },
     'alley' : {
         'name':'The Back Alley',
-        'description': '',
+        'description': 'With black painted brick walls, the alley was where the first victim was found. It leads to a gym with a boxing ring, which police suspect runs illegal fights but has never been proven.',
         'exits': '<<Available exits>>',
-        'exits1': ''
+        'exits1': '> the church \n > the beach \n > the precinct'
     }
 }
 offname = map['office']['name']
@@ -109,8 +109,20 @@ alex = map['alley']['exits']
 alex = map['alley']['exits1']
 
 #puzzles
-puzzle2 = {
+puzzle1 = {
     'opening': 'The killers back, he has sent you a letter, the letter reads: ',
     'where': 'You have been left a clue, where is the killer trying to direct you to?',
     'locations':'   1. the beach \n   2. the church \n   3. the back alley'
 }
+
+puzzle2 = {
+    'opening':'Using the knife to open the letter, you read the letter. The familiar handwriting reads:',
+    'where': 'The killers clue clearly leads you to the last crime scene, but what are you looking for?',
+    'items': '   1. a jacket \n   2. a wallet \n   3. a backpack'
+    }
+
+fight = {
+    'description': 'On your way to the back alley you notice some men dressed in dark colours following you. You attempt to get a good look at them but as you round the corner to the alley way you are hit on the head.',
+    'options': 'Will you: \n 1. Fight Back \n 2. Run \n \n Please enter either 1 or 2 bellow'
+}
+
