@@ -85,3 +85,142 @@ print(clearscreen())
             officev2()
             inter = input(str("What would you like to do? / Where would you like to go?")) 
             print(offifelse1())
+
+
+inter = input(str("What would you like to do? / Where would you like to go?"))
+    if inter == "help me":
+        print(clearscreen())
+        print(helpme())
+        print(endscene())
+
+    elif inter == "commands":
+        print(clearscreen())
+        print(commandsss())
+
+    elif inter == "map":
+        print(clearscreen())
+        print(mapp())
+        print(endscene())
+
+    elif inter == "mail":
+        print(clearscreen())
+        print(letters())
+        print(endscene())
+
+    elif inter == "puzzle":
+        print(puzzlerun1())
+
+    elif inter == "the beach":
+        print(clearscreen())
+    
+    elif inter == "the church":
+        print(clearscreen())
+        print(room())
+        print(churchv1())
+        inter = input(str("What would you like to do? / Where would you like to go?"))
+        if inter == 'help me':
+            print(clearscreen())
+            print(helpme())
+            print(endscene())
+        elif inter == 'commands':
+            print(clearscreen())
+            print(commandsss())
+            print(endscene())
+        elif inter == 'map':
+            print(clearscreen())
+            print(mapp())
+            print(endscene())
+        elif inter == 'mail':
+            print(clearscreen())
+            print(letters())
+            print(endscene())
+        elif inter == 'puzzle':
+            print(clearscreen())
+            mail.update({'second': "Hello again Detective, \nI hope you have found the gift I have left for you. Do take good care of it, I'll be sending some people to collect it when i'm ready to put it to good use. Don't you just love my addition to the handle, I hope BOBBI is not a bore, I just hate a bad time. But I love a good chase, to get to BOBBI before me, the alley holds the answers. Find the item with pockets big enought to hold a knife but too small to hold a textbook."})
+            print(puzzlerun2())
+        elif inter == 'the precinct':
+            print(clearscreen())
+            print(office1())
+            print(offifelse2())#?????????????????????????????????????????????????????????????????????????????????????????????
+        elif inter == 'the beach':
+            print(clearscreen())
+
+        elif inter == 'the back alley':
+            print(clearscreen())
+        
+        else: 
+            print('Try again')
+    elif inter == "the back alley":
+        print(clearscreen())
+
+    else:
+        print(Fore.WHITE, "Try again")
+
+
+def offifelse2():#options of where to go if they have already done the puzzle
+    inter = input(str("What would you like to do? / Where would you like to go?"))
+    if inter == "help me":
+        print(clearscreen())
+        print(helpme())
+        print(endscene())
+
+    elif inter == "commands":
+        print(clearscreen())
+        print(commandsss())
+
+    elif inter == "map":
+        print(clearscreen())
+        print(mapp())
+
+    elif inter == "mail":
+        print(clearscreen())
+        print(letters())
+
+    elif inter == "puzzle":
+        print('You have already successfully completed the puzzle from this room, congrats! \n If you want to review the mail from the puzzle, please enter "mail"')
+
+    elif inter == "the beach":
+        print(clearscreen())
+    
+    elif inter == "the church":
+        print(clearscreen())
+        print(room())
+        print(churchv1())
+        inter = input(str("What would you like to do? / Where would you like to go?"))
+        if inter == 'help me':
+            print(clearscreen())
+            print(helpme())
+            print(endscene())
+        elif inter == 'commands':
+            print(clearscreen())
+            print(commandsss())
+            print(endscene())
+        elif inter == 'map':
+            print(clearscreen())
+            print(mapp())
+            print(endscene())
+        elif inter == 'mail':
+            print(clearscreen())
+            print(letters())
+            print(endscene())
+        elif inter == 'puzzle':
+            print(clearscreen())
+            mail.update({'second': "Hello again Detective, \nI hope you have found the gift I have left for you. Do take good care of it, I'll be sending some people to collect it when i'm ready to put it to good use. Don't you just love my addition to the handle, I hope BOBBI is not a bore, I just hate a bad time. But I love a good chase, to get to BOBBI before me, the alley holds the answers. Find the item with pockets big enought to hold a knife but too small to hold a textbook."})
+            print(puzzlerun2())
+        elif inter == 'the precinct':
+            print(clearscreen())
+            print(office1())
+            print(offifelse2())#?????????????????????????????????????????????????????????????????????????????????????????????
+        elif inter == 'the beach':
+            print(clearscreen())
+
+        elif inter == 'the back alley':
+            print(clearscreen())
+        
+        else: 
+            print('Try again')
+    elif inter == "the back alley":
+        print(clearscreen())
+
+    else:
+        print(Fore.WHITE, "Try again")

@@ -5,8 +5,9 @@ import os
 import time 
 from data import *
 
-def idduno ():
-    str(input("What would you like to do? / Where would you like to go?"))
+health = 100
+if health > 100:
+    health = 100
 
 
 def clearscreen ():
@@ -24,7 +25,7 @@ def animate (text):
 
 
 #EVERY ROOM
-def room ():#non-specific info that goes into each room
+def room(health):#non-specific info that goes into each room
     print(Fore.LIGHTMAGENTA_EX, inventory['message'])
     print(Fore.WHITE, inventory['items'])
     print('')
@@ -103,7 +104,7 @@ def letters():#displays all the letters the killer has written to the detective
 
 
 #PRECINCT
-def office1():#The precinct text without puzzle option
+def office1(health):#The precinct text without puzzle option
     print(Fore.RED, intro['breakspace'])
     print(Fore.YELLOW, offname)
     print(Fore.RED, intro['breakspace'])
@@ -116,9 +117,9 @@ def office1():#The precinct text without puzzle option
     print(Fore.LIGHTMAGENTA_EX, offex)
     print(Fore.WHITE, offex1)
     print('')
-    print(room())
+    room(health)
 
-def officev2():#precinct text with puzzle option
+def officev2(health):#precinct text with puzzle option
     print(Fore.RED, intro['breakspace'])
     print(Fore.YELLOW, offname)
     print(Fore.RED, intro['breakspace'])
@@ -128,13 +129,13 @@ def officev2():#precinct text with puzzle option
     print()
     print(Fore.LIGHTMAGENTA_EX, offex)
     print(Fore.WHITE, offex1)
-    print(room())
+    room(health)
     print('')
     print(Fore.LIGHTMAGENTA_EX, puzzle['message'])
     print(Fore.CYAN, puzzle['command'], Fore.WHITE)
 
 
-def puzzlerun1():#displays the precinct puzzle and makes it work for all options
+def puzzlerun1(health):#displays the precinct puzzle and makes it work for all options
     print(Fore.RED, intro['breakspace'], Fore.YELLOW)
     animate('              Puzzle Room')
     print(Fore.RED, intro['breakspace'])
@@ -147,14 +148,14 @@ def puzzlerun1():#displays the precinct puzzle and makes it work for all options
     answer_1 = input("Please enter the number of you answer: ")
     if answer_1 == '1':
         clearscreen()
-        health = 100 # wont run with out it but what if health doesnt = 100
         print(Fore.RED, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n") 
         print(Fore.WHITE, 'Now that you know what it is not, re-attempt the question and find the next clue.')
         health = health - 5
         print(f'Your health is now {health}')
         print(endscene())
-        print(officev2())
-        print(offifelse1())
+        print(officev2(health))
+        offifelse1(health)
+        return health
     elif answer_1 == '2':
         print(clearscreen())
         print(Fore.LIGHTGREEN_EX, 'Correct! +5 health \n')
@@ -163,8 +164,9 @@ def puzzlerun1():#displays the precinct puzzle and makes it work for all options
         print(f'Your health is now {health}')
         print(endscene())
         while True:
-            office1()
-            print(offifelse2())
+            office1(health)
+            offifelse2(health)
+            return health
     elif answer_1 == '3':
         print(clearscreen())
         print(Fore.RED, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n") 
@@ -172,15 +174,16 @@ def puzzlerun1():#displays the precinct puzzle and makes it work for all options
         health =health - 5
         print(f'Your health is now {health}')
         print(endscene())
-        print(officev2())
-        print(offifelse1())
+        officev2(health)
+        offifelse1(health)
+        return health
     else:
         print("Try again")
         answer_1 = input("Please enter the number of you answer: ")
 
 
 
-def offifelse1():#Options of where to go from the precinct if they havent already done the puzzle
+def offifelse1(health):#Options of where to go from the precinct if they havent already done the puzzle
     inter = input(str("What would you like to do? / Where would you like to go?"))
     if inter == "help me":
         print(clearscreen())
@@ -202,15 +205,15 @@ def offifelse1():#Options of where to go from the precinct if they havent alread
         print(endscene())
 
     elif inter == "puzzle":
-        print(puzzlerun1())
+        puzzlerun1(health)
 
     elif inter == "the beach":
         print(clearscreen())
     
     elif inter == "the church":
         print(clearscreen())
-        print(room())
-        print(churchv1())
+        room(health)
+        churchv1(health)
         inter = input(str("What would you like to do? / Where would you like to go?"))
         if inter == 'help me':
             print(clearscreen())
@@ -231,11 +234,11 @@ def offifelse1():#Options of where to go from the precinct if they havent alread
         elif inter == 'puzzle':
             print(clearscreen())
             mail.update({'second': "Hello again Detective, \nI hope you have found the gift I have left for you. Do take good care of it, I'll be sending some people to collect it when i'm ready to put it to good use. Don't you just love my addition to the handle, I hope BOBBI is not a bore, I just hate a bad time. But I love a good chase, to get to BOBBI before me, the alley holds the answers. Find the item with pockets big enought to hold a knife but too small to hold a textbook."})
-            print(puzzlerun2())
+            puzzlerun2(health)
         elif inter == 'the precinct':
             print(clearscreen())
-            print(office1())
-            print(offifelse2())#?????????????????????????????????????????????????????????????????????????????????????????????
+            office1(health)
+            offifelse2()#?????????????????????????????????????????????????????????????????????????????????????????????
         elif inter == 'the beach':
             print(clearscreen())
 
@@ -251,7 +254,7 @@ def offifelse1():#Options of where to go from the precinct if they havent alread
         print(Fore.WHITE, "Try again")
 
 
-def offifelse2():#options of where to go if they have already done the puzzle
+def offifelse2(health):#options of where to go if they have already done the puzzle
     inter = input(str("What would you like to do? / Where would you like to go?"))
     if inter == "help me":
         print(clearscreen())
@@ -278,8 +281,8 @@ def offifelse2():#options of where to go if they have already done the puzzle
     
     elif inter == "the church":
         print(clearscreen())
-        print(room())
-        print(churchv1())
+        print(room(health))
+        print(churchv1(health))
         inter = input(str("What would you like to do? / Where would you like to go?"))
         if inter == 'help me':
             print(clearscreen())
@@ -300,11 +303,11 @@ def offifelse2():#options of where to go if they have already done the puzzle
         elif inter == 'puzzle':
             print(clearscreen())
             mail.update({'second': "Hello again Detective, \nI hope you have found the gift I have left for you. Do take good care of it, I'll be sending some people to collect it when i'm ready to put it to good use. Don't you just love my addition to the handle, I hope BOBBI is not a bore, I just hate a bad time. But I love a good chase, to get to BOBBI before me, the alley holds the answers. Find the item with pockets big enought to hold a knife but too small to hold a textbook."})
-            print(puzzlerun2())
+            print(puzzlerun2(health))
         elif inter == 'the precinct':
             print(clearscreen())
-            print(office1())
-            print(offifelse2())#?????????????????????????????????????????????????????????????????????????????????????????????
+            office1(health)
+            offifelse2(health)#?????????????????????????????????????????????????????????????????????????????????????????????
         elif inter == 'the beach':
             print(clearscreen())
 
@@ -321,7 +324,7 @@ def offifelse2():#options of where to go if they have already done the puzzle
 
 
 #CHURCH
-def churchv1():#precinct text with puzzle option
+def churchv1(health):#precinct text with puzzle option
     inventory.update({'first':'engraved knife (has BOBBI written on it)'})
     print(Fore.RED, intro['breakspace'])
     print(Fore.YELLOW, chna)
@@ -329,28 +332,29 @@ def churchv1():#precinct text with puzzle option
     print()
     print(Fore.WHITE, chdes)
     print()
-    print(room())
+    print(room(health))
     ()
     print(Fore.LIGHTMAGENTA_EX, chex)
     print(Fore.WHITE, chex1)
     print()
     print(Fore.LIGHTMAGENTA_EX, puzzle['message'])
-    print(Fore.CYAN, puzzle['command'], Fore.WHITE)
+    print(Fore.CYAN, puzzle['command'])
+    print(Fore.RED, puzzle['warning'], Fore.WHITE)
 
 
-def churchv2():#precinct text without puzzle option
+def churchv2(health):#precinct text without puzzle option
     print(Fore.RED, intro['breakspace'])
     print(Fore.YELLOW, chna)
     print(Fore.RED, intro['breakspace'])
     print()
     print(Fore.WHITE, chdes)
     print()
-    print(room())
+    print(room(health))
     print()
     print(Fore.LIGHTMAGENTA_EX, chex)
     print(Fore.WHITE, chex1)
 
-def puzzlerun2():#makes church puzzle run for all options
+def puzzlerun2(health):#makes church puzzle run for all options
     print(Fore.RED, intro['breakspace'], Fore.YELLOW)
     animate('              Puzzle Room')
     print(Fore.RED, intro['breakspace'])
@@ -371,8 +375,9 @@ def puzzlerun2():#makes church puzzle run for all options
         print(endscene())
         while True:
             print(clearscreen)
-            print(churchv2())
-            print(chifelse2())
+            print(churchv2(health))
+            print(chifelse2(health))
+            return health
     elif answer2 =='2':
         print(clearscreen())
         print(Fore.RED, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n") 
@@ -380,8 +385,9 @@ def puzzlerun2():#makes church puzzle run for all options
         health = health - 5
         print(f'Your health is now {health}')
         print(endscene())
-        print(churchv1())
-        print(chifelse1)
+        print(churchv1(health))
+        print(chifelse1(health))
+        return health
     elif answer2 == '3':
         print(clearscreen())
         print(Fore.RED, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n") 
@@ -389,15 +395,16 @@ def puzzlerun2():#makes church puzzle run for all options
         health = health - 5
         print(f'Your health is now {health}')
         print(endscene())
-        print(churchv1())
-        print(chifelse1)
+        print(churchv1(health))
+        print(chifelse1(health))
+        return health
     else:
         print("Try again")
         answer_1 = input("Please enter the number of you answer: ")
 
 
 
-def chifelse2(): #if else statement for if the puzzle is correct and already been completed
+def chifelse2(health): #if else statement for if the puzzle is correct and already been completed
     inter = input(str("What would you like to do? / Where would you like to go?"))
     if inter == 'help me':
         print(clearscreen())
@@ -419,15 +426,15 @@ def chifelse2(): #if else statement for if the puzzle is correct and already bee
         print('You have already successfully completed the puzzle from this room, congrats! \n If you want to review the mail from the puzzle, please enter "mail"')
     elif inter == 'the precinct':
         print(clearscreen())
-        print(office1())
-        print(offifelse2())#???????????????????????????????????????????????????????????????????????????????????????????????
+        print(office1(health))
+        print(offifelse2(health))#???????????????????????????????????????????????????????????????????????????????????????????????
     elif inter == "the beach":
         print(clearscreen())
     
     elif inter == "the back alley":
         print(clearscreen())
 
-def chifelse1(): #if else statement for if the puzzle has not been completed and needs to be redone
+def chifelse1(health): #if else statement for if the puzzle has not been completed and needs to be redone
     inter = input(str("What would you like to do? / Where would you like to go?"))
     if inter == "help me":
         print(clearscreen())
@@ -449,12 +456,12 @@ def chifelse1(): #if else statement for if the puzzle has not been completed and
         print(endscene())
     
     elif inter == 'puzzle':
-        print(puzzlerun2())
+        print(puzzlerun2(health))
 
     elif inter == 'the precinct':
         print(clearscreen())
-        print(office1())
-        print(offifelse2())#???????????????????????????????????????????????????????????????????????????????????????????????
+        office1(health)
+        print(offifelse2(health))#???????????????????????????????????????????????????????????????????????????????????????????????
     elif inter == 'the beach':
         print(clearscreen())
 

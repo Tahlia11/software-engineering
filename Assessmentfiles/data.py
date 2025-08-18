@@ -1,6 +1,4 @@
-health = 100
-if health > 100:
-    health = 100
+
 
 intro = {
         'breakspace': '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~',
@@ -25,7 +23,8 @@ mail = {
 
 puzzle = {
     'message':'<<You have a puzzle to complete>>',
-    'command':'    + Type "puzzle" to complete it'
+    'command':'    + Type "puzzle" to complete it',
+    'warning': '    + WARNING: if you leave the room the crime scene detectives will sweep your clues and the puzzle will no longer exist'
 }
 
 commands = {
