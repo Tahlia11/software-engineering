@@ -9,9 +9,15 @@ health = 100
 if health > 100:
     health = 100
 
+attack_health = 100
 
-def clearscreen ():
-    os.system('cls')
+def clearscreen():
+    # Check if the operating system is Windows ('nt')
+    if os.name == 'nt':
+        os.system('cls')
+    # Otherwise, assume it's a Unix-like system (Linux/macOS)
+    else:
+        os.system('clear')
 
 def endscene ():
     input('Hit "enter" to continue: ')
@@ -101,10 +107,12 @@ def letters():#displays all the letters the killer has written to the detective
     print(Fore.RED, intro['breakspace'])
     for key, value in mail.items():
         print(Fore.WHITE, value)
+    
 
 
 #PRECINCT
 def office1(health):#The precinct text without puzzle option
+    inventory['items'].append({'case files'})
     print(Fore.RED, intro['breakspace'])
     print(Fore.YELLOW, offname)
     print(Fore.RED, intro['breakspace'])
@@ -293,6 +301,7 @@ def offifelse2(health):#options of where to go if they have already done the puz
     elif inter == "mail":
         print(clearscreen())
         print(letters())
+        endscene()
 
     elif inter == "puzzle":
         print('You have already successfully completed the puzzle from this room, congrats! \n If you want to review the mail from the puzzle, please enter "mail"')
@@ -366,7 +375,7 @@ def offifelse2(health):#options of where to go if they have already done the puz
 
 #CHURCH
 def churchv1(health):#church text with puzzle option
-    inventory.update({'first':'engraved knife (has BOBBI written on it)'})
+    inventory['items'].append({'engraved knife (has BOBBI written on it)'})
     print(Fore.RED, intro['breakspace'])
     print(Fore.YELLOW, chna)
     print(Fore.RED, intro['breakspace'])
@@ -544,7 +553,7 @@ def chifelse1(health): #if else statement for if the puzzle has not been complet
 
 #BACK ALLEY
 def alleyv1(health):#back alley text with puzzle option
-    inventory.update({'third':"Hello Again Detective, \nI hope this letter and its friends find you well. I have left you a clue as to the wearabouts of my next beautiful, brown eyed victim succumbed to fate. Oh I do hope you will make it in time to see her blonde hair coated in blood. As always I love a challenge, I do hope these clues are enough for you to get your thick head around what is happening. \nI'll be seeing you again real soon."})
+    mail.update({'third':"Hello Again Detective, \nI hope this letter and its friends find you well. I have left you a clue as to the wearabouts of my next beautiful, brown eyed victim succumbed to fate. Oh I do hope you will make it in time to see her blonde hair coated in blood. As always I love a challenge, I do hope these clues are enough for you to get your thick head around what is happening. \nI'll be seeing you again real soon."})
     print(Fore.RED, intro['breakspace'])
     print(Fore.YELLOW, alna)
     print(Fore.RED, intro['breakspace'])
@@ -822,7 +831,7 @@ def allifelse2(health): #if else statement for if the puzzle is correct and alre
 
 
 
-def fight1(health):
+def fight1(health, attack_health):
     clearscreen()
     print(Fore.RED, intro['breakspace'])
     print(Fore.YELLOW, "              Fight")
@@ -834,3 +843,22 @@ def fight1(health):
     ask = input("What will you do?")
     if ask == '2':
         print("You got away!")
+    elif ask == '1':
+        clearscreen()
+        print(Fore.RED, 'You have chosen to fight!')
+        print()
+        print(Fore.GREEN, 'Here are you current inventory items!')
+        print(Fore.WHITE, inventory['items'])
+        w_choice = input(str('What item would you like to use to strike the attacker?'))
+        while w_choice not in inventory['items']:
+          
+            w_choice = input(str('What item would you like to use to strike the attacker?'))
+            if w_choice in inventory['items']:
+                print('Its time to fight')
+            else:
+                print("This is serious! Enter a valid item.")
+        print(Fore.GREEN, '')
+        print(f'Your current health is {health}')
+        print(f'Your attackers health is {attack_health}')
+        while attack_health > 0 and health > 0:
+            

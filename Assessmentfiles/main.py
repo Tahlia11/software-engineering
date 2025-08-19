@@ -9,12 +9,13 @@ while health > 0:
     animate(f"{intro['welcome']}")
     print(Fore.RED, intro['breakspace'])
     print(Fore.WHITE, intro['description'], Fore.CYAN)
-    print(endscene())
+    print(endscene()) #👍
 
     #Game tips and starting controlls
     print(Fore.GREEN, start['success'])
     print(Fore.WHITE, start['basic'], Fore.CYAN)
     print(endscene())
+
     while True:
     #First room - Office
         officev2(health)
@@ -80,4 +81,4 @@ while health > 0:
             print(Fore.WHITE, "Try again")
 
 clearscreen()
-print(Fore.GREEN, 'Game over. You have no health left. Should have looked at that more closely')
+# print(Fore.GREEN, 'Game over. You have no health left. Should have looked at that more closely')
