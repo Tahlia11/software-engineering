@@ -132,7 +132,8 @@ def officev2(health):#precinct text with puzzle option
     room(health)
     print('')
     print(Fore.LIGHTMAGENTA_EX, puzzle['message'])
-    print(Fore.CYAN, puzzle['command'], Fore.WHITE)
+    print(Fore.CYAN, puzzle['command'])
+    print(Fore.RED, puzzle['warning'], Fore.WHITE)
 
 
 def puzzlerun1(health):#displays the precinct puzzle and makes it work for all options
@@ -182,7 +183,6 @@ def puzzlerun1(health):#displays the precinct puzzle and makes it work for all o
         answer_1 = input("Please enter the number of you answer: ")
 
 
-
 def offifelse1(health):#Options of where to go from the precinct if they havent already done the puzzle
     inter = input(str("What would you like to do? / Where would you like to go?"))
     if inter == "help me":
@@ -201,10 +201,11 @@ def offifelse1(health):#Options of where to go from the precinct if they havent 
 
     elif inter == "mail":
         print(clearscreen())
-        print(letters())
+        letters()
         print(endscene())
 
     elif inter == "puzzle":
+        clearscreen()
         puzzlerun1(health)
 
     elif inter == "the beach":
@@ -244,11 +245,31 @@ def offifelse1(health):#Options of where to go from the precinct if they havent 
 
         elif inter == 'the back alley':
             print(clearscreen())
+
+        elif inter == "quit":
+            quit = input(str("Are you sure you want to quit? Enter yes/no: "))
+            if quit == 'no':
+                print(clearscreen())
+            elif quit == 'yes':
+                clearscreen()
+                print(Fore.RED, "The quitters ending")
+                print(Fore.WHITE, "You gave up. I'm disappointed.")
+                exit()
         
         else: 
             print('Try again')
     elif inter == "the back alley":
         print(clearscreen())
+
+    elif inter == "quit":
+        quit = input(str("Are you sure you want to quit? Enter yes/no: "))
+        if quit == 'no':
+            print(clearscreen())
+        elif quit == 'yes':
+            clearscreen()
+            print(Fore.RED, "The quitters ending")
+            print(Fore.WHITE, "You gave up. I'm disappointed.")
+            exit()
 
     else:
         print(Fore.WHITE, "Try again")
@@ -313,18 +334,38 @@ def offifelse2(health):#options of where to go if they have already done the puz
 
         elif inter == 'the back alley':
             print(clearscreen())
+
+        elif inter == "quit":
+            quit = input(str("Are you sure you want to quit? Enter yes/no: "))
+            if quit == 'no':
+                print(clearscreen())
+            elif quit == 'yes':
+                clearscreen()
+                print(Fore.RED, "The quitters ending")
+                print(Fore.WHITE, "You gave up. I'm disappointed.")
+                exit()
         
         else: 
             print('Try again')
     elif inter == "the back alley":
         print(clearscreen())
 
+    elif inter == "quit":
+        quit = input(str("Are you sure you want to quit? Enter yes/no: "))
+        if quit == 'no':
+            print(clearscreen())
+        elif quit == 'yes':
+            clearscreen()
+            print(Fore.RED, "The quitters ending")
+            print(Fore.WHITE, "You gave up. I'm disappointed.")
+            exit()
+
     else:
         print(Fore.WHITE, "Try again")
 
 
 #CHURCH
-def churchv1(health):#precinct text with puzzle option
+def churchv1(health):#church text with puzzle option
     inventory.update({'first':'engraved knife (has BOBBI written on it)'})
     print(Fore.RED, intro['breakspace'])
     print(Fore.YELLOW, chna)
@@ -342,7 +383,7 @@ def churchv1(health):#precinct text with puzzle option
     print(Fore.RED, puzzle['warning'], Fore.WHITE)
 
 
-def churchv2(health):#precinct text without puzzle option
+def churchv2(health):#church text without puzzle option
     print(Fore.RED, intro['breakspace'])
     print(Fore.YELLOW, chna)
     print(Fore.RED, intro['breakspace'])
@@ -363,7 +404,7 @@ def puzzlerun2(health):#makes church puzzle run for all options
     print('')
     print(Fore.WHITE, mail['second'])
     print()
-    print(puzzle1['where'])
+    print(puzzle2['where'])
     print(puzzle2['items'])
     answer2 = input("Please enter the number of your answer:")
     if answer2 == '1':
@@ -424,15 +465,31 @@ def chifelse2(health): #if else statement for if the puzzle is correct and alrea
         print(endscene())
     elif inter == 'puzzle':
         print('You have already successfully completed the puzzle from this room, congrats! \n If you want to review the mail from the puzzle, please enter "mail"')
+
     elif inter == 'the precinct':
         print(clearscreen())
         print(office1(health))
         print(offifelse2(health))#???????????????????????????????????????????????????????????????????????????????????????????????
     elif inter == "the beach":
         print(clearscreen())
-    
+
     elif inter == "the back alley":
         print(clearscreen())
+
+    elif inter == "quit":
+        quit = input(str("Are you sure you want to quit? Enter yes/no: "))
+        if quit == 'no':
+            print(clearscreen())
+        elif quit == 'yes':
+            clearscreen()
+            print(Fore.RED, "The quitters ending")
+            print(Fore.WHITE, "You gave up. I'm disappointed.")
+            exit()
+
+    else:
+        print("Try again")
+        answer_1 = input("Please enter the number of you answer: ")
+
 
 def chifelse1(health): #if else statement for if the puzzle has not been completed and needs to be redone
     inter = input(str("What would you like to do? / Where would you like to go?"))
@@ -456,7 +513,10 @@ def chifelse1(health): #if else statement for if the puzzle has not been complet
         print(endscene())
     
     elif inter == 'puzzle':
+        clearscreen()
+        mail.update({'second': "Hello again Detective, \nI hope you have found the gift I have left for you. Do take good care of it, I'll be sending some people to collect it when i'm ready to put it to good use. Don't you just love my addition to the handle, I hope BOBBI is not a bore, I just hate a bad time. But I love a good chase, to get to BOBBI before me, the alley holds the answers. Find the item with pockets big enought to hold a knife but too small to hold a textbook."})
         print(puzzlerun2(health))
+        endscene()
 
     elif inter == 'the precinct':
         print(clearscreen())
@@ -468,6 +528,309 @@ def chifelse1(health): #if else statement for if the puzzle has not been complet
     elif inter == 'the back alley':
         print(clearscreen())
 
+    elif inter == "quit":
+        quit = input(str("Are you sure you want to quit? Enter yes/no: "))
+        if quit == 'no':
+            print(clearscreen())
+        elif quit == 'yes':
+            clearscreen()
+            print(Fore.RED, "The quitters ending")
+            print(Fore.WHITE, "You gave up. I'm disappointed.")
+            exit()
+
     else:
         print("Try again")
         answer_1 = input("Please enter the number of you answer: ")
+
+#BACK ALLEY
+def alleyv1(health):#back alley text with puzzle option
+    inventory.update({'third':"Hello Again Detective, \nI hope this letter and its friends find you well. I have left you a clue as to the wearabouts of my next beautiful, brown eyed victim succumbed to fate. Oh I do hope you will make it in time to see her blonde hair coated in blood. As always I love a challenge, I do hope these clues are enough for you to get your thick head around what is happening. \nI'll be seeing you again real soon."})
+    print(Fore.RED, intro['breakspace'])
+    print(Fore.YELLOW, alna)
+    print(Fore.RED, intro['breakspace'])
+    print()
+    print(Fore.WHITE, aldes)
+    print()
+    print(room(health))
+    ()
+    print(Fore.LIGHTMAGENTA_EX, alex)
+    print(Fore.WHITE, alex1)
+    print()
+    print(Fore.LIGHTMAGENTA_EX, puzzle['message'])
+    print(Fore.CYAN, puzzle['command'])
+    print(Fore.RED, puzzle['warning'], Fore.WHITE)
+
+def alleyv2(health):#back alley text without puzzle option
+    print(Fore.RED, intro['breakspace'])
+    print(Fore.YELLOW, alna)
+    print(Fore.RED, intro['breakspace'])
+    print()
+    print(Fore.WHITE, aldes)
+    print()
+    print(room(health))
+    print()
+    print(Fore.LIGHTMAGENTA_EX, alex)
+    print(Fore.WHITE, alex1)
+
+
+
+def puzzlerun3(health):#makes church puzzle run for all options
+    print(Fore.RED, intro['breakspace'], Fore.YELLOW)
+    animate('              Puzzle Room')
+    print(Fore.RED, intro['breakspace'])
+    print()
+    print(puzzle3['opening'])
+    print('')
+    print(Fore.WHITE, mail['third'])
+    print()
+    print(puzzle3['where'])
+    print(puzzle3['options'])
+    answer3 = input("Please enter the number of your answer:")
+    if answer3 == '1':
+        print(clearscreen())
+        print(Fore.LIGHTGREEN_EX, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n")
+        print(Fore.WHITE, 'Now that you know what it is not, re-attempt the question and find the next clue.')
+        health =health - 5
+        print(f'Your health is now {health}')
+        endscene()
+        alleyv1(health)
+        allifelse1(health)
+    elif answer3 =='2':
+        print(clearscreen())
+        print(Fore.RED, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n") 
+        print(Fore.WHITE, 'Now that you know what it is not, re-attempt the question and find the next clue.')
+        health = health - 5
+        print(f'Your health is now {health}')
+        print(endscene())
+        alleyv1(health)
+        allifelse1(health)
+        return health
+    elif answer3 == '3':
+        print(clearscreen())
+        print(Fore.RED, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n") 
+        print(Fore.WHITE, 'Now that you know what it is not, re-attempt the question and find the next clue.')
+        health = health - 5
+        print(f'Your health is now {health}')
+        endscene()
+        alleyv1(health)
+        allifelse1(health)
+        return health
+    elif answer3 == '4':
+        clearscreen()
+        print(Fore.GREEN, "Correct! +5 health")
+        print(Fore.WHITE, "You know who you are looking for! Now go find her before it is too late!")
+        health = health +5
+        print(f'Your health is now {health}')
+        endscene()
+        while True:
+            clearscreen()
+            alleyv2(health)
+            allifelse2(health)
+            return health
+    else:
+        print("Try again")
+        answer_1 = input("Please enter the number of you answer: ")
+
+
+def allifelse1(health): #if else statement for if the puzzle has not been completed and needs to be redone
+    inter = input(str("What would you like to do? / Where would you like to go?"))
+    if inter == "help me":
+        print(clearscreen())
+        print(helpme())
+        print(endscene())
+
+    elif inter == "commands":
+        print(clearscreen())
+        print(commandsss())
+        endscene()
+
+    elif inter == "map":
+        print(clearscreen())
+        print(mapp())
+        print(endscene())
+
+    elif inter == "mail":
+        print(clearscreen())
+        print(letters())
+        print(endscene())
+    
+    elif inter == 'puzzle':
+        clearscreen()
+        puzzlerun3(health)
+        endscene()
+
+    elif inter == 'the precinct':
+        print(clearscreen())
+        office1(health)
+        print(offifelse2(health))#???????????????????????????????????????????????????????????????????????????????????????????????
+
+    elif inter == 'the beach':
+        print(clearscreen())
+
+    elif inter == 'the church':
+        print(clearscreen())
+        room(health)
+        churchv1(health)
+        inter = input(str("What would you like to do? / Where would you like to go?"))
+        if inter == 'help me':
+            print(clearscreen())
+            print(helpme())
+            print(endscene())
+        elif inter == 'commands':
+            print(clearscreen())
+            print(commandsss())
+            print(endscene())
+        elif inter == 'map':
+            print(clearscreen())
+            print(mapp())
+            print(endscene())
+        elif inter == 'mail':
+            print(clearscreen())
+            print(letters())
+            print(endscene())
+        elif inter == 'puzzle':
+            print(clearscreen())
+            mail.update({'second': "Hello again Detective, \nI hope you have found the gift I have left for you. Do take good care of it, I'll be sending some people to collect it when i'm ready to put it to good use. Don't you just love my addition to the handle, I hope BOBBI is not a bore, I just hate a bad time. But I love a good chase, to get to BOBBI before me, the alley holds the answers. Find the item with pockets big enought to hold a knife but too small to hold a textbook."})
+            puzzlerun2(health)
+        elif inter == 'the precinct':
+            print(clearscreen())
+            office1(health)
+            offifelse2()#?????????????????????????????????????????????????????????????????????????????????????????????
+        elif inter == 'the beach':
+            print(clearscreen())
+
+        elif inter == 'the back alley':
+            print(clearscreen())
+
+        elif inter == "quit":
+            quit = input(str("Are you sure you want to quit? Enter yes/no: "))
+            if quit == 'no':
+                print(clearscreen())
+            elif quit == 'yes':
+                clearscreen()
+                print(Fore.RED, "The quitters ending")
+                print(Fore.WHITE, "You gave up. I'm disappointed.")
+                exit()
+        
+        else: 
+            print('Try again')
+
+    elif inter == "quit":
+        quit = input(str("Are you sure you want to quit? Enter yes/no: "))
+        if quit == 'no':
+            print(clearscreen())
+        elif quit == 'yes':
+            clearscreen()
+            print(Fore.RED, "The quitters ending")
+            print(Fore.WHITE, "You gave up. I'm disappointed.")
+            exit()
+
+    else:
+        print("Try again")
+        answer_1 = input("Please enter the number of you answer: ")
+
+
+def allifelse2(health): #if else statement for if the puzzle is correct and already been completed
+    inter = input(str("What would you like to do? / Where would you like to go?"))
+    if inter == 'help me':
+        print(clearscreen())
+        print(helpme())
+        print(endscene())
+    elif inter == 'commands':
+        print(clearscreen())
+        print(commandsss())
+        print(endscene())
+    elif inter == 'map':
+        print(clearscreen())
+        print(mapp())
+        print(endscene())
+    elif inter == 'mail':
+        print(clearscreen())
+        print(letters())
+        print(endscene())
+    elif inter == 'puzzle':
+        print('You have already successfully completed the puzzle from this room, congrats! \n If you want to review the mail from the puzzle, please enter "mail"')
+
+    elif inter == 'the precinct':
+        print(clearscreen())
+        print(office1(health))
+        print(offifelse2(health))#???????????????????????????????????????????????????????????????????????????????????????????????
+    elif inter == "the beach":
+        print(clearscreen())
+
+    elif inter == "the church":
+        clearscreen()
+        room(health)
+        churchv1(health)
+        inter = input(str("What would you like to do? / Where would you like to go?"))
+        if inter == 'help me':
+            print(clearscreen())
+            print(helpme())
+            print(endscene())
+        elif inter == 'commands':
+            print(clearscreen())
+            print(commandsss())
+            print(endscene())
+        elif inter == 'map':
+            print(clearscreen())
+            print(mapp())
+            print(endscene())
+        elif inter == 'mail':
+            print(clearscreen())
+            print(letters())
+            print(endscene())
+        elif inter == 'puzzle':
+            print(clearscreen())
+            mail.update({'second': "Hello again Detective, \nI hope you have found the gift I have left for you. Do take good care of it, I'll be sending some people to collect it when i'm ready to put it to good use. Don't you just love my addition to the handle, I hope BOBBI is not a bore, I just hate a bad time. But I love a good chase, to get to BOBBI before me, the alley holds the answers. Find the item with pockets big enought to hold a knife but too small to hold a textbook."})
+            puzzlerun2(health)
+        elif inter == 'the precinct':
+            print(clearscreen())
+            office1(health)
+            offifelse2()#?????????????????????????????????????????????????????????????????????????????????????????????
+        elif inter == 'the beach':
+            print(clearscreen())
+
+        elif inter == 'the back alley':
+            print(clearscreen())
+
+        elif inter == "quit":
+            quit = input(str("Are you sure you want to quit? Enter yes/no: "))
+            if quit == 'no':
+                print(clearscreen())
+            elif quit == 'yes':
+                clearscreen()
+                print(Fore.RED, "The quitters ending")
+                print(Fore.WHITE, "You gave up. I'm disappointed.")
+                exit()
+        
+        else: 
+            print('Try again')
+
+    elif inter == "quit":
+        quit = input(str("Are you sure you want to quit? Enter yes/no: "))
+        if quit == 'no':
+            print(clearscreen())
+        elif quit == 'yes':
+            clearscreen()
+            print(Fore.RED, "The quitters ending")
+            print(Fore.WHITE, "You gave up. I'm disappointed.")
+            exit()
+
+    else:
+        print("Try again")
+        answer_1 = input("Please enter the number of you answer: ")
+
+
+
+def fight1(health):
+    clearscreen()
+    print(Fore.RED, intro['breakspace'])
+    print(Fore.YELLOW, "              Fight")
+    print(Fore.RED, intro['breakspace'])
+    print()
+    print(Fore.WHITE, fight['description'])
+    print()
+    print(Fore.CYAN, fight['options'])
+    ask = input("What will you do?")
+    if ask == '2':
+        print("You got away!")

@@ -24,12 +24,12 @@ mail = {
 puzzle = {
     'message':'<<You have a puzzle to complete>>',
     'command':'    + Type "puzzle" to complete it',
-    'warning': '    + WARNING: if you leave the room the crime scene detectives will sweep your clues and the puzzle will no longer exist'
+    'warning': '    + WARNING: if you leave the room the crime scene forensics will sweep your clues and the puzzle will no longer exist'
 }
 
 commands = {
     'head': '<<Useful Commands>>',
-    'all': '  *To move = Type location name (e.g. "The Church) \n   help me || commands || map || mail || puzzle'
+    'all': '  *To move = Type location name (e.g. "The Church) \n   help me || commands || map || mail || puzzle || quit'
 }
 
 #options
@@ -105,7 +105,7 @@ chex1 = map['church']['exits1']
 alna = map['alley']['name']
 aldes = map['alley']['description']
 alex = map['alley']['exits']
-alex = map['alley']['exits1']
+alex1 = map['alley']['exits1']
 
 #puzzles
 puzzle1 = {
@@ -120,8 +120,14 @@ puzzle2 = {
     'items': '   1. a jacket \n   2. a wallet \n   3. a backpack'
     }
 
+puzzle3 = {
+    'Opening':'After searching through the last victims backpack, you find a poster for a workout event called BOBBI (Builing Our Beach Bro Influence), a map where a section of the beach has a cross over it and a letter addressed you. How the killer got into the crime scene is beyond you but anyway, the letter reads:',
+    'where':'The killer has left you a lot of useful clues in the letter. What is BOBBI? Who are you looking for?',
+    'options':'   1. BOBBI is a man. I am looking for a brown eyed, blonde haired man. \n   2. BOBBI is a workout group called Builing Our Beach Bro Influence. I am looking for a brown haired, blue eyed girl.\n   3. BOBBI is a type of food. I am looking for a chef with brown eyes and blonde hair.\n   4. BOBBI is a workot group Builing Our Beach Bro Influence. I am looking for a brown eyed, blonde haired girl.',
+    'afterread':'After reading the letter and doing a quick google, you find out that there is only one female attending the event, Rebecca Sanders. She must be the next victim.'
+}
+
 fight = {
     'description': 'On your way to the back alley you notice some men dressed in dark colours following you. You attempt to get a good look at them but as you round the corner to the alley way you are hit on the head.',
     'options': 'Will you: \n 1. Fight Back \n 2. Run \n \n Please enter either 1 or 2 bellow'
 }
-
