@@ -1,5 +1,4 @@
 
-
 intro = {
         'breakspace': '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~',
         'welcome': '          Unsolved: The Correspondance',
@@ -61,26 +60,26 @@ commandss = {
 map = {
     'heading': '              The Correspondance Map',
     'office' : {
-        'name': 'The Precinct',
+        'name': '              The Precinct',
         'description': 'Buzzing with men in uniform, the precinct is the home of all detectives & police, their watching you.',
         'first':'Your boss has given you a new case. A young girl has been murdered in a back alley way coming out of a gym. The worst part, you recognise the way she has been killed. He is back. For your first clue complete the puzzle.',
         'exits': '<<Available exits>>',
         'exits1': ' > the church \n > the beach \n > the back alley'
     },
    'beach': {
-        'name': 'The Beach',
-        'description': '',
+        'name': '              The Beach',
+        'description': "Running through a crowd of little kids and sweaty gym bros was not your idea of a good day, but you'll do anything so save the next victim, who you now know is Rebecca Sanders. The stares of people make you uncomfortably aware of the office clothes you have on. Let's just hope you can get to her before time is up.  ",
         'exits': '<<Available exits>>',
         'exits1': ' > the church \n > the precinct \n > the back alley'
     },
     'church': {
-        'name': 'The Church',
+        'name': '              The Church',
         'description': 'As you enter the church, you instantly get the feeling that something is wrong. Your suspitions are confirmed when you look at the altar and instead of candles or a cross, you find an engraved knife and a letter addresses to you. Your only question, who is BOBBI?',
         'exits': '<<Available exits>>',
         'exits1': ' > the precinct \n > the beach \n > the back alley'
     },
     'alley' : {
-        'name':'The Back Alley',
+        'name':'              The Back Alley',
         'description': 'With black painted brick walls, the alley was where the first victim was found. It leads to a gym with a boxing ring, which police suspect runs illegal fights but has never been proven.',
         'exits': '<<Available exits>>',
         'exits1': '> the church \n > the beach \n > the precinct'
@@ -121,10 +120,17 @@ puzzle2 = {
     }
 
 puzzle3 = {
-    'Opening':'After searching through the last victims backpack, you find a poster for a workout event called BOBBI (Builing Our Beach Bro Influence), a map where a section of the beach has a cross over it and a letter addressed you. How the killer got into the crime scene is beyond you but anyway, the letter reads:',
+    'opening':'After searching through the last victims backpack, you find a poster for a workout event called BOBBI (Builing Our Beach Bro Influence), a map where a section of the beach has a cross over it and a letter addressed you. How the killer got into the crime scene is beyond you but anyway, the letter reads:',
     'where':'The killer has left you a lot of useful clues in the letter. What is BOBBI? Who are you looking for?',
     'options':'   1. BOBBI is a man. I am looking for a brown eyed, blonde haired man. \n   2. BOBBI is a workout group called Builing Our Beach Bro Influence. I am looking for a brown haired, blue eyed girl.\n   3. BOBBI is a type of food. I am looking for a chef with brown eyes and blonde hair.\n   4. BOBBI is a workot group Builing Our Beach Bro Influence. I am looking for a brown eyed, blonde haired girl.',
     'afterread':'After reading the letter and doing a quick google, you find out that there is only one female attending the event, Rebecca Sanders. She must be the next victim.'
+}
+
+puzzle4 = {
+    'opening':'You are struggling to find Rebecca through the crowd gathering for the event. You are worried about gain the killers attention.',
+    'what':'What are you going to do?',
+    'options':'   1. Scream \n   2. Fire your gun to gain attention \n   3. Do nothing a find her calmly \n   4. Ask people where she is \n   5. Call a task force and look for her individually',
+    'after':'Now you know what to do lets go find Rebecca!'
 }
 
 fight = {

@@ -9,40 +9,40 @@ while health > 0:
     animate(f"{intro['welcome']}")
     print(Fore.RED, intro['breakspace'])
     print(Fore.WHITE, intro['description'], Fore.CYAN)
-    print(endscene()) #👍
+    endscene() 
 
     #Game tips and starting controlls
     print(Fore.GREEN, start['success'])
     print(Fore.WHITE, start['basic'], Fore.CYAN)
-    print(endscene())
+    endscene()
 
     while True:
     #First room - Office
         officev2(health)
         inter = input(str("What would you like to do? / Where would you like to go?"))
         if inter == "help me":
-            print(clearscreen())
-            print(helpme())
-            print(endscene())
+            clearscreen()
+            helpme()
+            endscene()
         
 
 
         elif inter == "commands":
-            print(clearscreen())
-            print(commandsss())
-            print(endscene())
+            clearscreen()
+            commandsss()
+            endscene()
 
 
         elif inter == "map":
-            print(clearscreen())
-            print(mapp())
-            print(endscene())
+            clearscreen()
+            mapp()
+            endscene()
 
 
         elif inter == "mail":
-            print(clearscreen())
-            print(letters())
-            print(endscene())
+            clearscreen()
+            letters()
+            endscene()
 
 
         elif inter == "puzzle":
@@ -53,19 +53,23 @@ while health > 0:
 
 
         elif inter == "the church":
-            print(clearscreen())
+            clearscreen()
             room(health)
             churchv1(health)
             chifelse1(health)
 
         elif inter == "the back alley":
-            print(clearscreen())
-            room(health)
+            clearscreen()
+            fight1(health, attack_health)
             alleyv1(health)
             allifelse1(health)
+            endscene()
 
         elif inter == "the beach":
-            print(clearscreen())
+            clearscreen()
+            beachv1(health)
+            beaifelse1(health)
+            endscene()
 
         elif inter == "quit":
             quit = input(str("Are you sure you want to quit? Enter yes/no: "))
@@ -81,4 +85,4 @@ while health > 0:
             print(Fore.WHITE, "Try again")
 
 clearscreen()
-# print(Fore.GREEN, 'Game over. You have no health left. Should have looked at that more closely')
+print(Fore.GREEN, 'Game over. You have no health left. Should have looked at that more closely')
