@@ -54,7 +54,6 @@ while health > 0:
 
         elif inter == "the church":
             clearscreen()
-            room(health)
             churchv1(health)
             chifelse1(health)
 
@@ -63,13 +62,11 @@ while health > 0:
             fight1(health, attack_health)
             alleyv1(health)
             allifelse1(health)
-            endscene()
 
         elif inter == "the beach":
             clearscreen()
             beachv1(health)
             beaifelse1(health)
-            endscene()
 
         elif inter == "quit":
             quit = input(str("Are you sure you want to quit? Enter yes/no: "))
@@ -82,7 +79,9 @@ while health > 0:
                 exit()
 
         else:
+            clearscreen()
             print(Fore.WHITE, "Try again")
+            
 
 clearscreen()
 print(Fore.GREEN, 'Game over. You have no health left. Should have looked at that more closely')

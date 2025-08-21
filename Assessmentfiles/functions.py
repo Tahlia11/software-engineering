@@ -26,7 +26,7 @@ def animate (text):
     print('')
 
 #EVERY ROOM
-def room(health):#non-specific info that goes into each room
+def room(health):#non room specific info that goes into each room
     print(Fore.LIGHTMAGENTA_EX, inventory['message'])
     print(Fore.WHITE, inventory['items'])
     print('')
@@ -141,6 +141,8 @@ def puzzlerun1(health):#displays the precinct puzzle and makes it work for all o
         print(Fore.RED, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n") 
         print(Fore.WHITE, 'Now that you know what it is not, re-attempt the question and find the next clue.')
         health = health - 5
+        if health > 100:
+            health = 100
         print(f'Your health is now {health}')
         endscene()
         officev2(health)
@@ -151,6 +153,8 @@ def puzzlerun1(health):#displays the precinct puzzle and makes it work for all o
         print(Fore.LIGHTGREEN_EX, 'Correct! +5 health \n')
         print(Fore.WHITE, 'The killer is leading you to the church! We have to get there quickly to find the next clue.')
         health =health + 5
+        if health > 100:
+            health = 100
         print(f'Your health is now {health}')
         endscene()
         while True:
@@ -162,6 +166,8 @@ def puzzlerun1(health):#displays the precinct puzzle and makes it work for all o
         print(Fore.RED, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n") 
         print(Fore.WHITE, 'Now that you know what it is not, re-attempt the question and find the next clue.')
         health =health - 5
+        if health > 100:
+            health = 100
         print(f'Your health is now {health}')
         endscene()
         officev2(health)
@@ -181,6 +187,7 @@ def offifelse1(health):#Options of where to go from the precinct if they havent 
     elif inter == "commands":
         clearscreen()
         commandsss()
+        endscene()
 
     elif inter == "map":
         clearscreen()
@@ -256,7 +263,7 @@ def offifelse2(health):#options of where to go if they have already done the puz
         clearscreen()
         room(health)
         churchv1(health)
-        chifelse1()
+        chifelse1(health)
 
     elif inter == "the back alley":
         clearscreen()
@@ -325,6 +332,8 @@ def puzzlerun2(health):#makes church puzzle run for all options
         print(Fore.LIGHTGREEN_EX, 'Correct! +5 health \n')
         print(Fore.WHITE, "The last victims jacket has the answers to who BOBBI is. Let's go to the alley.")
         health =health + 5
+        if health > 100:
+            health = 100
         print(f'Your health is now {health}')
         endscene()
         while True:
@@ -337,6 +346,8 @@ def puzzlerun2(health):#makes church puzzle run for all options
         print(Fore.RED, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n") 
         print(Fore.WHITE, 'Now that you know what it is not, re-attempt the question and find the next clue.')
         health = health - 5
+        if health > 100:
+            health = 100
         print(f'Your health is now {health}')
         endscene()
         churchv1(health)
@@ -347,6 +358,8 @@ def puzzlerun2(health):#makes church puzzle run for all options
         print(Fore.RED, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n") 
         print(Fore.WHITE, 'Now that you know what it is not, re-attempt the question and find the next clue.')
         health = health - 5
+        if health > 100:
+            health = 100
         print(f'Your health is now {health}')
         endscene()
         churchv1(health)
@@ -383,7 +396,6 @@ def chifelse2(health): #if else statement for if the puzzle is correct and alrea
         clearscreen()
         office1(health)
         offifelse2(health)
-        endscene()
     elif inter == "the beach":
         clearscreen()
 
@@ -405,7 +417,7 @@ def chifelse2(health): #if else statement for if the puzzle is correct and alrea
 
     else:
         print("Try again")
-        chifelse2()
+        chifelse2(health)
 
 def chifelse1(health): #if else statement for if the puzzle has not been completed and needs to be redone
     inter = input(str("What would you like to do? / Where would you like to go?"))
@@ -432,13 +444,11 @@ def chifelse1(health): #if else statement for if the puzzle has not been complet
         clearscreen()
         mail.update({'second': "Hello again Detective, \nI hope you have found the gift I have left for you. Do take good care of it, I'll be sending some people to collect it when i'm ready to put it to good use. Don't you just love my addition to the handle, I hope BOBBI is not a bore, I just hate a bad time. But I love a good chase, to get to BOBBI before me, the alley holds the answers. Find the item with pockets big enought to hold a knife but too small to hold a textbook."})
         puzzlerun2(health)
-        endscene()
 
     elif inter == 'the precinct':
         clearscreen()
         office1(health)
         offifelse2(health)
-        endscene()
     elif inter == 'the beach':
         clearscreen()
 
@@ -460,7 +470,7 @@ def chifelse1(health): #if else statement for if the puzzle has not been complet
 
     else:
         print("Try again")
-        chifelse1()
+        chifelse1(health)
 
 #BACK ALLEY
 def alleyv1(health):#back alley text with puzzle option
@@ -511,6 +521,8 @@ def puzzlerun3(health):#makes church puzzle run for all options
         print(Fore.LIGHTGREEN_EX, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n")
         print(Fore.WHITE, 'Now that you know what it is not, re-attempt the question and find the next clue.')
         health =health - 5
+        if health > 100:
+            health = 100
         print(f'Your health is now {health}')
         endscene()
         alleyv1(health)
@@ -520,6 +532,8 @@ def puzzlerun3(health):#makes church puzzle run for all options
         print(Fore.RED, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n") 
         print(Fore.WHITE, 'Now that you know what it is not, re-attempt the question and find the next clue.')
         health = health - 5
+        if health > 100:
+            health = 100
         print(f'Your health is now {health}')
         endscene()
         alleyv1(health)
@@ -530,6 +544,8 @@ def puzzlerun3(health):#makes church puzzle run for all options
         print(Fore.RED, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n") 
         print(Fore.WHITE, 'Now that you know what it is not, re-attempt the question and find the next clue.')
         health = health - 5
+        if health > 100:
+            health = 100
         print(f'Your health is now {health}')
         endscene()
         alleyv1(health)
@@ -540,6 +556,8 @@ def puzzlerun3(health):#makes church puzzle run for all options
         print(Fore.GREEN, "Correct! +5 health")
         print(Fore.WHITE, "You know who you are looking for! Now go find her before it is too late!")
         health = health +5
+        if health > 100:
+            health = 100
         print(f'Your health is now {health}')
         endscene()
         while True:
@@ -576,7 +594,6 @@ def allifelse1(health): #if else statement for if the puzzle has not been comple
     elif inter == 'puzzle':
         clearscreen()
         puzzlerun3(health)
-        endscene()
 
     elif inter == 'the precinct':
         clearscreen()
@@ -590,7 +607,7 @@ def allifelse1(health): #if else statement for if the puzzle has not been comple
         clearscreen()
         room(health)
         churchv1(health)
-        chifelse1()
+        chifelse1(health)
 
     elif inter == "quit":
         quit = input(str("Are you sure you want to quit? Enter yes/no: "))
@@ -639,7 +656,7 @@ def allifelse2(health): #if else statement for if the puzzle is correct and alre
         clearscreen()
         room(health)
         churchv1(health)
-        chifelse1()
+        chifelse1(health)
 
     elif inter == "quit":
         quit = input(str("Are you sure you want to quit? Enter yes/no: "))
@@ -797,6 +814,8 @@ def puzzlerun4(health):
         print(Fore.LIGHTGREEN_EX, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n")
         print(Fore.WHITE, 'Now that you know what it is not, re-attempt the question and find the next clue.')
         health =health - 5
+        if health > 100:
+            health = 100
         print(f'Your health is now {health}')
         endscene()
         beachv1(health)
@@ -806,6 +825,8 @@ def puzzlerun4(health):
         print(Fore.RED, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n") 
         print(Fore.WHITE, 'Now that you know what it is not, re-attempt the question and find the next clue.')
         health = health - 5
+        if health > 100:
+            health = 100
         print(f'Your health is now {health}')
         endscene()
         beachv1(health)
@@ -816,6 +837,8 @@ def puzzlerun4(health):
         print(Fore.RED, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n") 
         print(Fore.WHITE, 'Now that you know what it is not, re-attempt the question and find the next clue.')
         health = health - 5
+        if health > 100:
+            health = 100
         print(f'Your health is now {health}')
         endscene()
         beachv1(health)
@@ -826,6 +849,8 @@ def puzzlerun4(health):
         print(Fore.RED, "You are wrong. The exhaustion of figuring this out has taken a toll on you -5 health \n") 
         print(Fore.WHITE, 'Now that you know what it is not, re-attempt the question and find the next clue.')
         health = health - 5
+        if health > 100:
+            health = 100
         print(f'Your health is now {health}')
         endscene()
         beachv1(health)
@@ -836,6 +861,8 @@ def puzzlerun4(health):
         print(Fore.GREEN, "Correct! +5 health")
         print(Fore.WHITE, puzzle4['after'])
         health = health +5
+        if health > 100:
+            health = 100
         print(f'Your health is now {health}')
         endscene()
         while True:
@@ -872,7 +899,6 @@ def beaifelse1(health):
     elif inter == 'puzzle':
         clearscreen()
         puzzlerun4(health)
-        endscene()
 
     elif inter == 'the precinct':
         clearscreen()
@@ -889,7 +915,7 @@ def beaifelse1(health):
         clearscreen()
         room(health)
         churchv1(health)
-        chifelse1()
+        chifelse1(health)
 
     elif inter == "quit":
         quit = input(str("Are you sure you want to quit? Enter yes/no: "))
@@ -995,7 +1021,7 @@ def beaifelse2(health):
         clearscreen()
         room(health)
         churchv1(health)
-        chifelse1()
+        chifelse1(health)
 
     elif inter == "quit":
         quit = input(str("Are you sure you want to quit? Enter yes/no: "))
@@ -1022,6 +1048,17 @@ def beaifelse2(health):
         print(Fore.YELLOW, 'Killer Chase')
         print(Fore.RED, intro['breakspace'])
         print()
+        followifelse()
+
+    else:
+        print("Try again")
+        beaifelse2(health)
+        
+
+
+
+def followifelse():
+    while True:
         follow = input('The killer is leading you down the alley ways, will you call for backup or go it alone? \n    1. call for backup\n    2. go it alone \n Enter a number: ')
         if follow == '1':
             clearscreen()
@@ -1035,29 +1072,26 @@ def beaifelse2(health):
             print()
             print(Fore.WHITE, 'You continue following the killer for some time.')
             print('When the killer begins to slow and reach for something, you have two options:\n     1. Pull your gun first\n    2. Wait and see what he is doing')
-            what = input('What will you do? Enter your answer number: ')
-            if what == '1':
-                clearscreen()
-                print(Fore.RED, intro['breakspace'])
-                print(Fore.YELLOW, 'The Murderers Ending')
-                print(Fore.RED, intro['breakspace'])
-                print()
-                print(Fore.WHITE, 'You pulled your gun and shot the killer first. \n While your boss was unhappy, it was self defence and rid the world of a dangerous man.')
-                exit()
-            elif what == '2':
-                clearscreen()
-                print(Fore.RED, intro['breakspace'])
-                print(Fore.YELLOW, 'The Cowards Ending')
-                print(Fore.RED, intro['breakspace'])
-                print()
-                print(Fore.WHITE, "You failed to pull your gun and got shot. \n Your boss had cause to fire you because you didn't call for backup. \n \n Enjoy being unemployed!")
-                exit()
-            else:
-                print('Try again')
+            while True:
                 what = input('What will you do? Enter your answer number: ')
+                if what == '1':
+                    clearscreen()
+                    print(Fore.RED, intro['breakspace'])
+                    print(Fore.YELLOW, 'The Murderers Ending')
+                    print(Fore.RED, intro['breakspace'])
+                    print()
+                    print(Fore.WHITE, 'You pulled your gun and shot the killer first. \n While your boss was unhappy, it was self defence and rid the world of a dangerous man.')
+                    exit()
+                elif what == '2':
+                    clearscreen()
+                    print(Fore.RED, intro['breakspace'])
+                    print(Fore.YELLOW, 'The Cowards Ending')
+                    print(Fore.RED, intro['breakspace'])
+                    print()
+                    print(Fore.WHITE, "You failed to pull your gun and got shot. \n Your boss had cause to fire you because you didn't call for backup. \n \n Enjoy being unemployed!")
+                    exit()
+                else:
+                    print('Try again')
+                    
         else:
             print("Try again")
-
-    else:
-        print("Try again")
-        beaifelse2(health)
