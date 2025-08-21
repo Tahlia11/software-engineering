@@ -203,7 +203,7 @@ def offifelse1(health):#Options of where to go from the precinct if they havent 
         clearscreen()
         room(health)
         churchv1(health)
-        chifelse1()
+        chifelse1(health)
 
     elif inter == "the back alley":
         clearscreen()

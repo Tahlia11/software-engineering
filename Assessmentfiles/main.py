@@ -48,7 +48,7 @@ while health > 0:
         elif inter == "puzzle":
             clearscreen()
             mail.update({'your first letter': "Hello Detective, \n Its been a long time. I'm sure you remember me, just as I remember you. I spent a long time locked up because of you, my reputation is ruined. Now I'm back, I'll go back to doing what I love. And you'll go back to chasing me. Find your first clue at the place where water meets te forehead, the sun shines in colour and you can finally find your people."})
-            health = puzzlerun1(health)
+            puzzlerun1(health)
             print(health)
 
 
