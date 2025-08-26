@@ -292,7 +292,7 @@ def offifelse2(health):#options of where to go if they have already done the puz
 
 #CHURCH
 def churchv1(health):#church text with puzzle option
-    inventory['items'].append({'engraved knife'})
+    inventory['items'].append('engraved knife')
     print(Fore.RED, intro['breakspace'], Fore.YELLOW)
     animate(chna)
     print(Fore.RED, intro['breakspace'])
@@ -483,7 +483,8 @@ def chifelse1(health): #if else statement for if the puzzle has not been complet
 
 #BACK ALLEY
 def alleyv1(health):#back alley text with puzzle option
-    inventory['items'].append['Poster for workout group called BOBBI', 'Map of the beach with an x over part of it']
+    inventory['items'].append('Poster for workout group called BOBBI')
+    inventory['items'].append('Map of the beach with an x over part of it')
     mail.update({'third':"Hello Again Detective, \nI hope this letter and its friends find you well. I have left you a clue as to the wearabouts of my next beautiful, brown eyed victim succumbed to fate. Oh I do hope you will make it in time to see her blonde hair coated in blood. As always I love a challenge, I do hope these clues are enough for you to get your thick head around what is happening. \nI'll be seeing you again real soon."})
     print(Fore.RED, intro['breakspace'], Fore.YELLOW)
     animate(alna)
@@ -501,7 +502,7 @@ def alleyv1(health):#back alley text with puzzle option
     print(Fore.RED, puzzle['warning'], Fore.WHITE)
 
 def alleyv2(health):#back alley text without puzzle option
-    inventory['items'].append['Poster for workout group called BOBBI', 'Map of the beach with an x over part of it']
+    inventory['items'].append('Poster for workout group called BOBBI', 'Map of the beach with an x over part of it')
     print(Fore.RED, intro['breakspace'], Fore.YELLOW)
     animate(alna)
     print(Fore.RED, intro['breakspace'])
@@ -703,7 +704,8 @@ def fight1(health, attack_health): #the fight before the back alley, has a chanc
     while True:
         ask = input("What will you do?")
         if ask == '2':
-            print("You got away!")
+            clearscreen()
+            print(Fore.GREEN, "You got away!")
         elif ask == '1':
             clearscreen()
             print(Fore.RED, 'You have chosen to fight!')
@@ -742,6 +744,7 @@ def fight1(health, attack_health): #the fight before the back alley, has a chanc
                     clearscreen()
                     print("You got away!")
                     endscene()
+                    break
                 elif ask == '1':
                     print(Fore.WHITE, 'You struck the attacker', Fore.RED)
                     print(f'Your attackers health is now {attack_health}', Fore.GREEN)
@@ -773,8 +776,11 @@ def fight1(health, attack_health): #the fight before the back alley, has a chanc
                         print(Fore.WHITE, 'Continue on to stop the killer!')
                         endscene()
                         break
+                    return attack_health
                 else:
                     print('Try again')
+        break
+    
 
 
 #Beach
