@@ -502,7 +502,8 @@ def alleyv1(health):#back alley text with puzzle option
     print(Fore.RED, puzzle['warning'], Fore.WHITE)
 
 def alleyv2(health):#back alley text without puzzle option
-    inventory['items'].append('Poster for workout group called BOBBI', 'Map of the beach with an x over part of it')
+    inventory['items'].append('Poster for workout group called BOBBI')
+    inventory['itmes'].append('Map of the beach with an x over part of it')
     print(Fore.RED, intro['breakspace'], Fore.YELLOW)
     animate(alna)
     print(Fore.RED, intro['breakspace'])
